@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-const Recipes = () => {
+const Recipes = ({addRecipeQueue}) => {
     const [recipes,setRecipes]=useState([])
     useEffect(()=>{
 fetch('recipes.json')
@@ -41,7 +41,7 @@ fetch('recipes.json')
         </div>
     </div>
     <div className="card-actions ">
-      <button className="btn bg-green-400 rounded-full px-8 text-xl text-gray-800 mt-4 font-medium">Want to Cook</button>
+      <button onClick={()=>addRecipeQueue(recipe)} className="btn bg-green-400 rounded-full px-8 text-xl text-gray-800 mt-4 font-medium">Want to Cook</button>
     </div>
   </div>
 </div>
